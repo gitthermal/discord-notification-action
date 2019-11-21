@@ -3,9 +3,19 @@
   "description": "GitHub Action for sending notification to Discord Server over webhooks.",
   "version": "0.0.1",
   "main": "index.js",
+  "scripts": {
+    "package": "./node_modules/.bin/ncc build index.js -o dist"
+  },
   "author": {
     "name": "Yashu Mittal",
     "email": "yashu@codecarrot.net"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.2.0"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.20.5",
+    "eslint": "^6.6.0"
+  }
 }

@@ -1,0 +1,9 @@
+name: 'Notification'
+description: 'Send GitHub Actions pipelines status to Discord.'
+inputs:
+  webhook_url:
+    description: 'Discord webhook URL'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
