@@ -1,20 +1,22 @@
 const core = require('@actions/core')
+const axios = require('axios')
 
 async function run() {
   try { 
     const discord_webhook_url = core.getInput('webhook_url', { required: true });
 
-    console.log(discord_webhook_url);
-
-    var xmlhttp = new XMLHttpRequest()
-    xmlhttp.open("POST", url, true);
-    xmlhttp.setRequestHeader(
-      "Content-type",
-      "application/json; charset=UTF-8"
-    );
-    xmlhttp.send(JSON.stringify({
+    const data = {
       content: "Hello world!"
-    }));
+    };
+
+    axios.post(discord_webhook_url, data)
+      .then(function (response) {
+        console.log("**Notified!**");
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
 
   }
   catch (error) {
