@@ -54,14 +54,22 @@ module.exports = require("os");
 /***/ (function(__unusedmodule, __unusedexports, __webpack_require__) {
 
 const core = __webpack_require__(470)
-const discord_webhook = __webpack_require__(464)
 
 async function run() {
   try { 
     const discord_webhook_url = core.getInput('webhook_url', { required: true });
 
     console.log(discord_webhook_url);
-    discord_webhook(discord_webhook_url)
+
+    var xmlhttp = new XMLHttpRequest()
+    xmlhttp.open("POST", url, true);
+    xmlhttp.setRequestHeader(
+      "Content-type",
+      "application/json; charset=UTF-8"
+    );
+    xmlhttp.send(JSON.stringify({
+      content: "Hello world!"
+    }));
 
   }
   catch (error) {
@@ -143,21 +151,6 @@ function escape(s) {
         .replace(/;/g, '%3B');
 }
 //# sourceMappingURL=command.js.map
-
-/***/ }),
-
-/***/ 464:
-/***/ (function() {
-
-const webhook = (url, data) => {
-  var xmlhttp = new XMLHttpRequest()
-  xmlhttp.open("POST", url, true);
-  xmlhttp.setRequestHeader(
-    "Content-type",
-    "application/json; charset=UTF-8"
-  );
-  xmlhttp.send(JSON.stringify(data));
-}
 
 /***/ }),
 
