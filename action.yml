@@ -4,6 +4,10 @@ inputs:
   webhook_url:
     description: 'Discord webhook URL'
     required: true
+  os:
+    description: 'On which OS pipeline runs'
+  node_version:
+    description: 'Node version'
 runs:
   using: 'node12'
   main: 'dist/index.js'
