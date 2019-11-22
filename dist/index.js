@@ -892,10 +892,14 @@ async function run() {
   try {
     console.log("github.context");
     console.log(github.context);
+    const github_context = github.context
 
     const discord_webhook_url = core.getInput('webhook_url', { required: true });
+
     const os = core.getInput('os', { required: true });
     const node_version = core.getInput('node_version', { required: true });
+
+    console.log(github_context.head_commit.message.split("\n\n"))
 
     const data = {
       content: "Hello world!",
@@ -903,7 +907,18 @@ async function run() {
       avatar_url: "https://i.imgur.com/u6mj8bs.png",
       embeds: [
         {
-          title: `${os} v${node_version}`
+          title: github_context.head_commit.message,
+          url: `https://www.github.com/${github_context.repository.organization}/${github_context.repository.name}/commit/${github_context.head_commit.id}`,
+          fields: [
+            {
+              name: "OS",
+              value: os
+            },
+            {
+              name: "Node version",
+              value: node_version
+            }
+          ]
         }
       ]
     };
