@@ -891,8 +891,8 @@ const axios = __webpack_require__(53)
 async function run() {
   try {
     console.log("github.context");
-    console.log(github.context);
-    const github_context = github.context
+    console.log(github.context.payload);
+    const github_context = github.context.payload
 
     const discord_webhook_url = core.getInput('webhook_url', { required: true });
 
