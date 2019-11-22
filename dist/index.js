@@ -953,7 +953,10 @@ async function run() {
     axios.post(discord_webhook_url, data)
       .then(function (response) {
         console.log("**Notified!**");
+
+        core.startGroup('Discord response data')
         console.log(response);
+        core.endGroup()
       })
       .catch(function (error) {
         console.log(error);
