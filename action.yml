@@ -6,8 +6,15 @@ inputs:
     required: true
   os:
     description: 'On which OS pipeline runs'
+    required: true
   node_version:
     description: 'Node version'
+    required: true
+  build_status:
+    description: 'State wheather the job is successful or not'
+  workflow_name:
+    description: 'Name of the workflow'
+    required: true
 runs:
   using: 'node12'
   main: 'dist/index.js'
