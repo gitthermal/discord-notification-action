@@ -14,9 +14,9 @@ async function run() {
 
     let build_status_color;
     if (build_status) {
-      return build_status_color = 0x2cbe4e;
+      build_status_color = 0x2cbe4e
     } else {
-      return build_status_color = 0xcb2431;
+      build_status_color = 0xcb2431
     }
 
     const commit_message = github_context.head_commit.message.split("\n\n")
