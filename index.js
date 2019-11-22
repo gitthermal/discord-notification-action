@@ -68,9 +68,7 @@ async function run() {
       .then(function (response) {
         console.log("**Notified!**");
 
-        core.startGroup('Discord response data')
         console.log(response);
-        core.endGroup()
       })
       .catch(function (error) {
         console.log(error);
