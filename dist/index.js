@@ -907,6 +907,9 @@ async function run() {
 
     const commit_message = github_context.head_commit.message
 
+    console.log("Log commit message");
+    console.log(commit_message);
+
     console.log("Log build status color");
     console.log(build_status_color);
 
@@ -943,7 +946,7 @@ async function run() {
           ],
           timestamp: Date.now(),
           footer: {
-            text: 'GitHub Action'
+            text: "GitHub Action"
           }
         }
       ]
