@@ -20,14 +20,6 @@ async function run() {
     }
 
     const commit_message = github_context.head_commit.message.split("\n\n")
-    const commit_message_title = commit_message[0]
-    const commit_message_description = commit_message[1]
-
-    console.log("Log commit message title");
-    console.log(commit_message_title);
-
-    console.log("Log commit message description");
-    console.log(commit_message_description);
 
     console.log("Log build status color");
     console.log(build_status_color);
@@ -37,7 +29,7 @@ async function run() {
       avatar_url: "https://i.imgur.com/u6mj8bs.png",
       embeds: [
         {
-          title: commit_message_title,
+          title: commit_message,
           url: github_context.head_commit.url,
           author: {
             name: github_context.sender.login,
