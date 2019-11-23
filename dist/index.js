@@ -905,7 +905,7 @@ async function run() {
       build_status_color = 0xcb2431
     }
 
-    const commit_message = github_context.head_commit.message.split("\n\n")
+    const commit_message = github_context.head_commit.message
 
     console.log("Log build status color");
     console.log(build_status_color);
