@@ -23,6 +23,12 @@ async function run() {
     const commit_message_title = commit_message[0]
     const commit_message_description = commit_message[1]
 
+    console.log("Log commit message description");
+    console.log(commit_message_description);
+
+    console.log("Log build status color");
+    console.log(build_status_color);
+
     const data = {
       username: workflow_name,
       avatar_url: "https://i.imgur.com/u6mj8bs.png",
@@ -30,13 +36,11 @@ async function run() {
         {
           title: commit_message_title,
           url: github_context.head_commit.url,
-          description: !!commit_message_description ? commit_message_description : '',
           author: {
             name: github_context.sender.login,
             icon_url: github_context.sender.avatar_url,
             url: github_context.sender.html_url
           },
-          color: !!build_status_color ? build_status_color : 0x202225,
           fields: [
             {
               name: "Branch",
