@@ -23,6 +23,9 @@ async function run() {
     const commit_message_title = commit_message[0]
     const commit_message_description = commit_message[1]
 
+    console.log("Log commit message title");
+    console.log(commit_message_title);
+
     console.log("Log commit message description");
     console.log(commit_message_description);
 
