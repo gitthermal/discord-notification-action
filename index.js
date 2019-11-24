@@ -33,35 +33,7 @@ async function run() {
       embeds: [
         {
           title: commit_message,
-          url: github_context.head_commit.url,
-          author: {
-            name: github_context.sender.login,
-            icon_url: github_context.sender.avatar_url,
-            url: github_context.sender.html_url
-          },
-          fields: [
-            {
-              name: "Branch",
-              value: os
-            },
-            {
-              name: "Commit ID",
-              value: github_context.head_commit.id
-            },
-            {
-              name: "OS",
-              value: os,
-              inline: true
-            },
-            {
-              name: "Node version",
-              value: node_version
-            }
-          ],
-          timestamp: Date.now(),
-          footer: {
-            text: "GitHub Action"
-          }
+          url: github_context.head_commit.url
         }
       ]
     };
