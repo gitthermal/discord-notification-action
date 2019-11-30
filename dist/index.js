@@ -925,7 +925,7 @@ async function run() {
             icon_url: github_context.sender.avatar_url,
             url: github_context.sender.html_url
           },
-          timestamp: Date.now(),
+          timestamp: new Date(),
           footer: {
             text: "GitHub Action"
           }
