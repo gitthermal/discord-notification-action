@@ -38,7 +38,12 @@ async function run() {
       ]
     };
 
-    axios.post(discord_webhook_url, data)
+    axios({
+      method: "post",
+      url: discord_webhook_url,
+      responseType: 'json',
+      data
+    })
       .then(function (response) {
         console.log("**Notified!**");
 
