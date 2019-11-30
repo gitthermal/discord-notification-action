@@ -38,6 +38,10 @@ async function run() {
             name: github_context.sender.login,
             icon_url: github_context.sender.avatar_url,
             url: github_context.sender.html_url
+          },
+          timestamp: Date.now(),
+          footer: {
+            text: "GitHub Action"
           }
         }
       ]
