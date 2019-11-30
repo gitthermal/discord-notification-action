@@ -39,6 +39,25 @@ async function run() {
             icon_url: github_context.sender.avatar_url,
             url: github_context.sender.html_url
           },
+          fields: [
+            {
+              name: "Branch",
+              value: os
+            },
+            {
+              name: "Commit ID",
+              value: github_context.head_commit.id
+            },
+            {
+              name: "OS",
+              value: os,
+              inline: true
+            },
+            {
+              name: "Node version",
+              value: node_version
+            }
+          ],
           timestamp: new Date(),
           footer: {
             text: "GitHub Action"
