@@ -919,7 +919,12 @@ async function run() {
       embeds: [
         {
           title: commit_message,
-          url: github_context.head_commit.url
+          url: github_context.head_commit.url,
+          author: {
+            name: github_context.sender.login,
+            icon_url: github_context.sender.avatar_url,
+            url: github_context.sender.html_url
+          }
         }
       ]
     };
